@@ -91,7 +91,8 @@ static int isOver_1v1(int b[4][4]) {
 }
 
 static void printDualBoards(int b1[4][4], int s1, int st1, char* name1, int b2[4][4], int s2, int st2, char* name2) {
-    printf("\x1b[H"); 
+    // Đã sửa lỗi lưu bóng mờ ở màn hình 1v1
+    printf("\x1b[H\x1b[J"); 
     
     // In tiêu đề, tên người chơi, điểm
     printf("%s%s       [ %s - WASD ]                           [ %s - Mui Ten ]\n%s", BOLD, F_CYAN, name1, name2, RESET);
@@ -164,7 +165,8 @@ int main() {
 
     do {
         while (1) {
-            printf("\x1b[H");
+            // Đã sửa lỗi lưu bóng mờ ở Menu chính
+            printf("\x1b[H\x1b[J");
             printf("%s", GAME_TITLE);
             
             printf("%s+--------------------------------------------------------+%s\n", F_NEON_BLUE, RESET);
@@ -196,7 +198,8 @@ int main() {
             else printf("%s|    " BOLD F_NEON_BLUE "[0]" RESET " %s%sLuu va Thoat (Ghi file)%s                         %s|\n", F_NEON_BLUE, BOLD, F_RED, RESET, F_NEON_BLUE);
 
             printf("%s+--------------------------------------------------------+%s\n", F_NEON_BLUE, RESET);
-            printf("\n%s%sHuong dan:%s Su dung phim Mui Ten %sLen/Xuong%s va nhan %s%sEnter%s de chon.\n", BOLD, F_CYAN, RESET, BOLD, RESET, BOLD, F_NEON_GREEN, RESET);
+            // Đã xóa \n thừa ở cuối và thêm khoảng trắng
+            printf("\n%s%sHuong dan:%s Su dung phim Mui Ten %sLen/Xuong%s va nhan %s%sEnter%s de chon.      ", BOLD, F_CYAN, RESET, BOLD, RESET, BOLD, F_NEON_GREEN, RESET);
 
             int ch = _getch();
             if (ch == 224) { 
