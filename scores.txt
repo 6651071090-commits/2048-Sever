@@ -1,9 +1,2 @@
-<<<<<<< HEAD
-Tuyen 10000
-Kiet 2836
-Tin 2434
-=======
-Tuyen 10000
-Kiet 2836
-Tin 2434
->>>>>>> 432fe19b0fab192244538c9688d49053bd883851
+wweeww 1444
+jjjhhg 1404
